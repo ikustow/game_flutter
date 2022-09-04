@@ -70,23 +70,15 @@ class _LoginPageState extends State<LoginPage> {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Consumer(builder: (context, ref, _) {
-          //  Consuming a provider using watch method and storing it in a variable
-          //  Now we will use this variable to access all the functions of the
-          //  authentication
+
           final auth = ref.watch(authenticationProvider);
 
-          //  Instead of creating a clutter on the onPressed Function
-          //  I have decided to create a seperate function and pass them into the
-          //  respective parameters.
-          //  if you want you can write the exact code in the onPressed function
-          //  it all depends on personal preference and code readability
+
           Future<void> _onPressedFunction() async {
             if (!_formKey.currentState!.validate()) {
               return;
             }
-            // print(_email.text); // This are your best friend for debugging things
-            //  not to mention the debugging tools
-            // print(_password.text);
+
             if (type == Status.login) {
               loading();
               await auth
@@ -113,10 +105,6 @@ class _LoginPageState extends State<LoginPage> {
                   }));
             }
 
-            //  I had said that we would be using a Loading spinner when
-            //  some functions are being performed. we need to check if some
-            //  error occured then we need to stop loading spinner so we can retry
-            //  Authenticating
           }
 
           Future<void> _loginWithGoogle() async {

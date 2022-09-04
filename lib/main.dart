@@ -1,7 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'auth/pages/auth_checker.dart';
+import 'generated/l10n.dart';
 
 
 Future<void> main() async {
@@ -19,7 +21,13 @@ class MyApp extends ConsumerWidget {
 
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        //supportedLocales: S.delegate.supportedLocales,
          home: AuthChecker()
     );
   }

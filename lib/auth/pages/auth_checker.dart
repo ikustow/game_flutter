@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../providers/auth_provider.dart';
 import 'error_screen.dart';
-import 'home_page.dart';
+import '../../home/home_page.dart';
 import 'loading_screen.dart';
 import 'login_page.dart';
 

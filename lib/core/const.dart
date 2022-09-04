@@ -1,0 +1,4 @@
+enum TypeOfHero{
+  knight,
+  wizard
+}
