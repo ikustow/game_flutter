@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:game_flutter/get/home/view/getx_home_page.dart';
 
 import '../providers/auth_provider.dart';
 import 'error_screen.dart';
@@ -24,7 +25,7 @@ class AuthChecker extends ConsumerWidget {
     final authState = ref.watch(authStateProvider);
     return authState.when(
         data: (data) {
-          if (data != null) return  HomePage();
+          if (data != null) return  GetXHomePage();
           return  LoginPage();
         },
         loading: () => const LoadingScreen(),
